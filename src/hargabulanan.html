@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   
 </head>
 <body class="bg-[#f2f7fa] font-nunito">
@@ -57,7 +58,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto items-start">
-        <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200 flex flex-col">
+        <div data-aos="fade-right" class="bg-white rounded-lg shadow-md p-6 border border-gray-200 flex flex-col">
     <div class="text-orange-500 font-semibold text-sm mb-1 flex items-center gap-2">
         <img src="assets/starter-icon.svg" alt="starter icon">
         <p>Starter</p>
@@ -100,7 +101,7 @@
 </div>
 
         <!-- Ultimate Plan -->
-        <div class="bg-white rounded-lg shadow-2xl p-6 border-2 border-orange-500">
+        <div data-aos="fade-up" class="bg-white rounded-lg shadow-2xl p-6 border-2 border-orange-500">
             <div class="flex justify-between mb-1">
             <div class="flex items-center gap-2 text-orange-500 font-semibold text-sm">
                 <img src="assets/star-icon.svg" alt="star icon">
@@ -172,7 +173,7 @@
         </div>
 
         <!-- Growth Plan -->
-        <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+        <div data-aos="fade-left" class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
             <div class="text-orange-500 font-semibold text-sm mb-1 flex items-center gap-2">
                 <img src="assets/growth-icon.svg" alt="growth icon">
                 <p>Growth</p>
@@ -289,5 +290,84 @@
             </div>
         </div>
     </div>
+
+    <footer class="bg-[linear-gradient(to_left,#F5AF19,#FF7F00,#E97000)] text-white mt-48">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-5 gap-8 mb-8">
+                <div>
+                    <img src="assets/Jemari-icon-light.svg" alt="Jemari Point">
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-3">Jemari Point</h4>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Beranda</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">FAQ</a></li>
+                        <li class="mb-1"><a href="input-masterdata.html" class="hover:text-orange-400 text-sm">Video Tutorial</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Kebijakan Privasi</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Syarat dan Ketentuan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-3">Perusahaan</h4>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Tentang Kami</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Hubungi Kami</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Karir</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-3">Harga</h4>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Desktop</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Detail Paket</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Promosi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-3">Office</h4>
+                    <p class="text-sm">Jemari Point berlokasi di Purwokerto, Banyumas, Jawa Tengah. Jl. Kol. Sugiri  No. 22 Purwokerto</p>
+                </div>
+            </div>
+            <div class="border-t border-white text-white pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-center mb-4 md:mb-0 md:order-2 md:flex-grow">
+                    Copyright &copy;2025 Jemari Point
+                </p>
+
+                <div class="flex space-x-4 md:order-1">
+                    <a href="#" class="text-white-400 hover:text-orange-400">
+                        <img src="assets/youtube-icon.svg" class="w-6 h-6" alt="youtube">
+                        <span class="sr-only">YouTube</span>
+                    </a>
+                    <a href="#" class="text-white-400 hover:text-orange-400">
+                        <img src="assets/facebook-icon.svg" class="w-6 h-6" alt="Facebook">
+                        <span class="sr-only">Facebook</span>
+                    </a>
+                    <a href="#" class="text-white-400 hover:text-orange-400">
+                        <img src="assets/instagram-icon.svg" class="w-6 h-6" alt="Instagram">
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                    <a href="#" class="text-white-400 hover:text-orange-400">
+                        <img src="assets/mail-icon.svg" class="w-6 h-6" alt="Instagram">
+                        <span class="sr-only">Email</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex md:space-x-4 md:order-3 invisible" aria-hidden="true">
+                    <svg class="w-6 h-6"><path d=""/></svg>
+                    <svg class="w-6 h-6"><path d=""/></svg>
+                    <svg class="w-6 h-6"><path d=""/></svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, 
+        once: true, 
+      });
+    </script>
 </body>
 </html>
