@@ -501,6 +501,9 @@
   .h-12 {
     height: calc(var(--spacing) * 12);
   }
+  .h-24 {
+    height: calc(var(--spacing) * 24);
+  }
   .h-\[290px\] {
     height: 290px;
   }
@@ -539,6 +542,9 @@
   }
   .w-12 {
     width: calc(var(--spacing) * 12);
+  }
+  .w-24 {
+    width: calc(var(--spacing) * 24);
   }
   .w-64 {
     width: calc(var(--spacing) * 64);
@@ -657,6 +663,9 @@
   .-translate-y-1\/2 {
     --tw-translate-y: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .rotate-180 {
+    rotate: 180deg;
   }
   .rotate-270 {
     rotate: 270deg;
@@ -966,6 +975,9 @@
   .bg-pink-500 {
     background-color: var(--color-pink-500);
   }
+  .bg-transparent {
+    background-color: transparent;
+  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -987,6 +999,9 @@
   }
   .bg-\[linear-gradient\(to_left\,\#F5AF19\,\#FF7F00\,\#E97000\)\] {
     background-image: linear-gradient(to left,#F5AF19,#FF7F00,#E97000);
+  }
+  .bg-\[url\(\'assets\/quart-circle\.svg\'\)\,_url\(\'assets\/quart-circle\.svg\'\)\] {
+    background-image: url('assets/quart-circle.svg'), url('assets/quart-circle.svg');
   }
   .from-\[\#FEC128\] {
     --tw-gradient-from: #FEC128;
@@ -1016,8 +1031,14 @@
   .bg-cover {
     background-size: cover;
   }
+  .bg-\[position\:top_right\,_bottom_left\] {
+    background-position: top right, bottom left;
+  }
   .bg-center {
     background-position: center;
+  }
+  .bg-no-repeat {
+    background-repeat: no-repeat;
   }
   .object-contain {
     object-fit: contain;
@@ -1696,6 +1717,11 @@
       width: calc(var(--spacing) * 6);
     }
   }
+  .sm\:w-auto {
+    @media (width >= 40rem) {
+      width: auto;
+    }
+  }
   .sm\:max-w-md {
     @media (width >= 40rem) {
       max-width: var(--container-md);
@@ -1908,6 +1934,11 @@
       margin-bottom: calc(var(--spacing) * 6);
     }
   }
+  .md\:mb-12 {
+    @media (width >= 48rem) {
+      margin-bottom: calc(var(--spacing) * 12);
+    }
+  }
   .md\:flex {
     @media (width >= 48rem) {
       display: flex;
@@ -2118,6 +2149,11 @@
   .md\:px-\[97px\] {
     @media (width >= 48rem) {
       padding-inline: 97px;
+    }
+  }
+  .md\:py-20 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 20);
     }
   }
   .md\:py-24 {
