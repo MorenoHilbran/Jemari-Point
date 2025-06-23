@@ -605,11 +605,20 @@
   .w-64 {
     width: calc(var(--spacing) * 64);
   }
+  .w-\[3\] {
+    width: 3;
+  }
   .w-\[90\%\] {
     width: 90%;
   }
   .w-\[160px\] {
     width: 160px;
+  }
+  .w-\[324\] {
+    width: 324;
+  }
+  .w-\[324px\] {
+    width: 324px;
   }
   .w-\[456px\] {
     width: 456px;
@@ -789,6 +798,9 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
+  }
   .gap-12 {
     gap: calc(var(--spacing) * 12);
   }
@@ -869,6 +881,9 @@
       margin-inline-end: calc(calc(var(--spacing) * 21) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
+  .self-start {
+    align-self: flex-start;
+  }
   .overflow-hidden {
     overflow: hidden;
   }
@@ -901,6 +916,10 @@
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
+  }
+  .rounded-t-lg {
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
   }
   .rounded-b-xl {
     border-bottom-right-radius: var(--radius-xl);
@@ -946,6 +965,9 @@
   }
   .border-\[\#CDCDCD38\] {
     border-color: #CDCDCD38;
+  }
+  .border-\[\#FDFEFF\] {
+    border-color: #FDFEFF;
   }
   .border-\[\#FF7F00\] {
     border-color: #FF7F00;
