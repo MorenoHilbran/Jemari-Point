@@ -1493,6 +1493,9 @@
   .text-\[\#FF911F\] {
     color: #FF911F;
   }
+  .text-\[1\] {
+    color: 1;
+  }
   .text-black {
     color: var(--color-black);
   }
