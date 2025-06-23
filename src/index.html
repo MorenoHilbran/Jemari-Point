@@ -96,7 +96,7 @@
 
     <section class="hero-gradient bg-[#ff7f00] text-white relative overflow-hidden">
          <svg width="801" height="446" viewBox="0 0 801 446" fill="none" xmlns="http://www.w3.org/2000/svg"
-        class="absolute bottom-0 left-0 z-0 -translate-y-1/2">
+        class="absolute -bottom-32 left-0 z-0 -translate-y-1/2">
             <path d="M34 101.218C83.5 10.2178 143.5 -15.7822 190 8.71777C236.5 33.2178 162 174.218 273.5 126.218C348.12 94.0942 425.61 143.476 469.73 186.139C482.472 198.459 502.614 200.533 517.52 190.943C575.699 153.515 673.33 117.147 742 181.718C822.4 257.318 803.167 335.884 783.5 365.718C732.081 456.689 478.686 479.706 526.753 480.209L479.406 479.978L506.511 457.477L342.506 259.934L363.302 242.669L266.646 206.915L284.01 308.498L305.575 290.595L462.737 479.896L-130 477.012V388.028H96.75V415.057L186 363.528L96.75 312V340.028H-130V194.218C-91.8333 193.551 -5.60001 174.018 34 101.218Z" fill="url(#paint0_linear_1_639)" fill-opacity="0.15"/>
             <defs>
             <linearGradient id="paint0_linear_1_639" x1="335.379" y1="1.52588e-05" x2="335.379" y2="480.209" gradientUnits="userSpaceOnUse">
@@ -128,57 +128,56 @@
             </defs>
         </svg>
 
-        <div class="container mx-auto px-[96px] py-16 md:py-24 flex flex-col md:flex-row items-center">
-            <div data-aos="fade-up" class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">Kelola Seluruh <br>
-                    Manajemen Toko Emas <br> Kamu Secara Terpusat, <br> dari Stok hingga Laporan</h1>
-                <p class="text-lg mb-6">Semua fitur bisa didapatkan hanya dengan satu aplikasi.</p>
-               <div class="flex items-center"> 
-                    <a href="#" class="inline-flex items-center space-x-2 bg-white text-[#FF7F01] font-semibold px-4 py-3 rounded-md hover:bg-gray-100 transition duration-300">
-                        <img src="assets/whatsapp.svg" class="h-6 w-6" alt="whatsapp">
-                        <span style="font-size: 16px; font-weight: 600">Coba Gratis Sekarang</span>
-                    </a>
-                </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-24 py-12 md:py-24 flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
+    
+    <div data-aos="fade-up" class="text-center lg:text-left">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">Kelola Seluruh <br>
+            Manajemen Toko Emas <br> Kamu Secara Terpusat, <br> dari Stok hingga Laporan</h1>
+        <p class="text-lg md:text-xl mb-8">Semua fitur bisa didapatkan hanya dengan satu aplikasi.</p>
+        <div class="flex items-center justify-center lg:justify-start"> 
+            <a href="#" class="inline-flex items-center space-x-2 bg-white text-[#FF7F01] font-semibold px-5 py-3 rounded-md hover:bg-gray-100 transition duration-300 shadow-md">
+                <img src="assets/whatsapp.svg" class="h-6 w-6" alt="whatsapp">
+                <span class="text-base font-semibold">Coba Gratis Sekarang</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="relative lg:w-1/2 flex justify-center lg:justify-end">
+    
+        <div data-aos="fade-up" class="relative z-10 bg-white/20 backdrop-blur-lg rounded-2xl p-4 w-full max-w-xl">
+            <img src="assets/background-dashboard.webp" alt="Jemari Point Dashboard" 
+                 class="w-full h-full object-contain">
+        </div>
+
+        <div data-aos="zoom-in" class="absolute z-20 top-0 -right-4 sm:right-0 md:-top-4 md:-right-8 transform">
+            <div class="bg-white p-3 sm:p-4 rounded-xl w-fit shadow-lg">
+                <img src="assets/kategori-barang-jumlah.png" alt="Kategori Barang Jumlah" class="w-32 sm:w-[160px]">
             </div>
+        </div>
 
-            <div class="relative md:flex">
-            
-                <!-- Elemen Dashboard Preview -->
-                <div data-aos="fade-up" class="relative z-10 mb-8 md:mb-0 bg-white/20 backdrop-blur-lg rounded-4xl p-4">
-                    <img src="assets/background-dashboard.webp" alt="Jemari Point Dashboard" 
-                        class="w-full max-w-sm sm:max-w-md mx-auto md:max-w-md lg:max-w-xl xl:max-w-2xl">
-                </div>
-
-                <!-- Kategori Barang Jumlah - Kanan Atas -->
-                <div data-aos="zoom-in" class="absolute z-20 top-0 right-0 md:-top-2 md:-right-4 transform translate-x-4">
-                    <div class="bg-white p-4 rounded-xl w-fit">
-                    <img src="assets/kategori-barang-jumlah.png" alt="Kategori Barang Jumlah" class="w-[160px]">
-                    </div>
-                </div>
-
-                <!-- Kategori Barang Nominal - Kiri Bawah -->
-                <div data-aos="zoom-in" class="absolute z-20 bottom-8 -left-10 md:bottom-24 md:-left-12">
-                    <div class="bg-white p-4 rounded-xl w-fit">
-                    <img src="assets/kategori-barang-nominal.png" alt="Kategori Barang Nominal" class="w-[160px]">
-                    </div>
-                </div>
-
-                <div data-aos="fade-up" class="absolute z-20 -bottom-12 left-1/2 transform -translate-x-1/2 bg-white rounded-xl p-4">
-                    <div class="flex flex-row items-center">
-                        <nav class="flex flex-row items-center space-x-4 overflow-x-auto py-2 px-1 border-1 border-[#CDCDCD38] rounded-full">
-                            <a href="#" class="bg-[#EAF8F7] font-semibold text-[#196D6B] text-[9px] px-4 py-1 rounded-full whitespace-nowrap hover:bg-[#C1E9E6] hover:text-[#0F4E4C] transition-colors">Dashboard</a>
-                            <a href="#" class="text-[#737373] font-semibold text-[9px] px-4 py-1 rounded-full whitespace-nowrap hover:bg-[#EAF8F7] transition-colors">Penyesuaian Kas</a>
-                            <a href="#" class="text-[#737373] font-semibold text-[9px] px-4 py-1 rounded-full whitespace-nowrap hover:bg-[#EAF8F7] transition-colors">Manajemen Produk</a>
-                            <a href="#" class="text-[#737373] font-semibold text-[9px] px-4 py-1 rounded-full whitespace-nowrap hover:bg-[#EAF8F7] transition-colors">Penyesuaian Stok</a>
-                        </nav>
-                    </div>
-                    <div class="flex flex-col items-start gap-1 mt-1">
-                        <h2 class="text-[#196D6B] text-[16px] font-semibold">Dashboard</h2>
-                        <p class="text-[#525252] max-w-lg"> Kelola data makin gampang, grafik barang bisa dipantau berdasarkan jangka waktu</p>
-                    </div>
-                </div>
-
+        <div data-aos="zoom-in" class="absolute z-20 -bottom-8 -left-4 sm:-left-10 md:bottom-12 md:-left-12 transform">
+            <div class="bg-white p-3 sm:p-4 rounded-xl w-fit shadow-lg">
+                <img src="assets/kategori-barang-nominal.png" alt="Kategori Barang Nominal" class="w-32 sm:w-[160px]">
             </div>
+        </div>
+
+        <div data-aos="fade-up" class="absolute z-20 -bottom-12 left-1/2 transform -translate-x-1/2 bg-white rounded-xl p-4 w-[90%] sm:w-auto shadow-lg">
+            <div class="flex flex-row items-center">
+                <nav class="flex flex-row items-center space-x-2 sm:space-x-4 overflow-x-auto py-2 px-1 border border-gray-200 rounded-full">
+                    <a href="#" class="bg-[#EAF8F7] font-semibold text-[#196D6B] text-[9px] sm:text-xs px-3 sm:px-4 py-1 rounded-full whitespace-nowrap hover:bg-[#C1E9E6] transition-colors">Dashboard</a>
+                    <a href="#" class="text-gray-600 font-semibold text-[9px] sm:text-xs px-3 sm:px-4 py-1 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors">Penyesuaian Kas</a>
+                    <a href="#" class="text-gray-600 font-semibold text-[9px] sm:text-xs px-3 sm:px-4 py-1 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors">Manajemen Produk</a>
+                    <a href="#" class="text-gray-600 font-semibold text-[9px] sm:text-xs px-3 sm:px-4 py-1 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors">Penyesuaian Stok</a>
+                </nav>
+            </div>
+            <div class="flex flex-col items-start gap-1 mt-2">
+                <h2 class="text-[#196D6B] text-sm sm:text-base font-semibold">Dashboard</h2>
+                <p class="text-gray-500 text-xs sm:text-sm max-w-lg"> Kelola data makin gampang, grafik barang bisa dipantau berdasarkan jangka waktu</p>
+            </div>
+        </div>
+
+    </div>
+</div>
     </section>
 
     <section class="py-16 bg-gray-50 relative overflow-hidden ">
@@ -365,7 +364,7 @@
             <!-- Header -->
             <div data-aos="fade-right" class="justify-center">
             <p class="text-xl text-white font-medium mb-2">Saatnya majukan bisnismu bersama Jemari</p>
-            <h2 class="text-[48px] md:text-[48px] font-bold text-white leading-snug mb-12 max-w-6xl">
+            <h2 class="text-5xl md:text-5xl font-bold text-white leading-snug mb-12 max-w-6xl">
                 Integrasi yang Simpel, dengan Training untuk Pegawai Kamu
             </h2>
             </div>
@@ -376,7 +375,7 @@
             <!-- Langkah 1 -->
             <div data-aos="fade-up" class="bg-white rounded-xl shadow-md p-6 flex gap-4 w-full relative">
             <div class="flex flex-col items-center mt-1">
-                <div class="bg-[#D56C06] text-white text-3xl font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <div class="bg-[#D56C06] text-white text-2xl font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
                 1
                 </div>
                 <div class="w-px bg-[#D56C06] flex-1 mt-2" style="height: 100%;"></div>
@@ -384,7 +383,7 @@
 
             <!-- Konten teks -->
             <div class="pl-2">
-                <h2 class="text-[#D56C06] font-semibold text-3xl mb-1">Cek Dulu, Baru Pasang</h2>
+                <h2 class="text-[#D56C06] font-semibold text-2xl mb-1">Cek Dulu, Baru Pasang</h2>
                 <p class="text-gray-600 text-xl">
                 Sebelum proses instalasi sistem Jemari, tim kami akan melakukan analisis menyeluruh terhadap kebutuhan dan operasional toko kamu untuk memastikan sistem yang terpasang benar-benar sesuai dan optimal.
                 </p>
@@ -394,14 +393,14 @@
             <!-- Langkah 2 -->
             <div data-aos="fade-up" class="bg-white rounded-xl shadow-md p-6 flex gap-4 w-full relative">
                 <div class="flex flex-col items-center mt-1">
-                <div class="bg-[#D56C06] text-white text-3xl font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <div class="bg-[#D56C06] text-white text-2xl font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
                 2
                 </div>
                 <div class="w-px bg-[#D56C06] flex-1 mt-2" style="height: 100%;"></div>
             </div>
 
                 <div class="pl-2">
-                <h2 class="text-[#D56C06] font-semibold text-3xl mb-1">Settingan Disesuaikan, Biar Nggak Ribet</h2>
+                <h2 class="text-[#D56C06] font-semibold text-2xl mb-1">Settingan Disesuaikan, Biar Nggak Ribet</h2>
                 <p class="text-gray-600 text-xl">
                     Setelah analisa, kami akan melakukan penyesuaian dan konfigurasi sistem secara menyeluruh agar dapat terintegrasi dengan baik ke dalam sistem, sehingga mendukung efisiensi kerja.
                 </p>
@@ -411,13 +410,13 @@
             <!-- Langkah 3 -->
              <div data-aos="fade-up" class="bg-white rounded-xl shadow-md p-6 flex gap-4 w-full relative">
                 <div class="flex flex-col items-center mt-1">
-                <div class="bg-[#D56C06] text-white text-3xl font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <div class="bg-[#D56C06] text-white text-2xl font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
                 3
                 </div>
                 <div class="w-px bg-[#D56C06] flex-1 mt-2" style="height: 100%;"></div>
             </div>
                 <div class="pl-2">
-                <h2 class="text-[#D56C06] font-semibold text-3xl mb-1">Training Cepat Buat Tim Kamu</h2>
+                <h2 class="text-[#D56C06] font-semibold text-2xl mb-1">Training Cepat Buat Tim Kamu</h2>
                 <p class="text-gray-600 text-xl">
                     Setelah proses analisis dan penyesuaian sistem, kami akan memberikan pelatihan khusus kepada pegawai. Pelatihan ini mencakup pengoperasian fitur utama, alur kerja sistem, serta penanganan dasar.
                 </p>
@@ -427,13 +426,13 @@
             <!-- Langkah 4 (tanpa border bawah) -->
            <div data-aos="fade-up" class="bg-white rounded-xl shadow-md p-6 flex gap-4 w-full relative">
                 <div class="flex flex-col items-center mt-1">
-                <div class="bg-[#D56C06] text-white text-3xl font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <div class="bg-[#D56C06] text-white text-2xl font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
                 4
                 </div>
                 <div class="w-px bg-[#D56C06] flex-1 mt-2" style="height: 100%;"></div>
             </div>
                 <div class="pl-2">
-                <h2 class="text-[#D56C06] font-semibold text-3xl mb-1">Support Operasional Terus Jalan</h2>
+                <h2 class="text-[#D56C06] font-semibold text-2xl mb-1">Support Operasional Terus Jalan</h2>
                 <p class="text-gray-600 text-xl">
                     Kami menyediakan dukungan operasional berkelanjutan setelah sistem terintegrasi sepenuhnya. Tim support kami siap membantu Anda dalam menghadapi kendala teknis dan pembaruan sistem.
                 </p>
@@ -469,8 +468,8 @@
                 <div class="flex items-center space-x-3">
                     <img src="assets/uptodate-icon.svg" alt="Up To Date Icon">
                     <div class="flex-1"> 
-                        <h3 class="text-2xl md:text-2xl font-bold text-[#1E1E1E] mb-1">Up To Date</h3>
-                        <p class="text-lg sm:text-lg text-[#575757]">
+                        <h3 class="text-xl md:text-xl font-bold text-[#1E1E1E] mb-1">Up To Date</h3>
+                        <p class="text-lg sm:text-base text-[#575757]">
                             Di era digital, aplikasi Jemari selalu mengikuti perkembangan teknologi, menjadikannya relevan untuk kebutuhan bisnis modern.
                         </p>
                     </div>
@@ -484,8 +483,8 @@
                     <img src="assets/fitur-lengkap-icon.svg" alt="Fitur Icon">
                     
                     <div class="flex-1"> 
-                        <h3 class="text-2xl md:text-2xl font-bold text-[#1E1E1E] mb-1">Fitur Lengkap</h3>
-                        <p class="text-lg sm:text-lg text-[#575757]">
+                        <h3 class="text-xl md:text-xl font-bold text-[#1E1E1E] mb-1">Fitur Lengkap</h3>
+                        <p class="text-base sm:text-base text-[#575757]">
                             Fitur lengkap memungkinkan pengguna mencatat dan mengontrol stok barang, transaksi jual beli, tukar tambah, dan perubahan stok.
                         </p>
                     </div>
@@ -499,8 +498,8 @@
                     <img src="assets/Inovatif-icon.svg" alt="Inovatif Icon">
                     
                     <div class="flex-1"> 
-                        <h3 class="text-2xl md:text-2xl font-bold text-[#1E1E1E] mb-1">Inovatif dan Efisien</h3>
-                        <p class="text-lg sm:text-lg text-[#575757]">
+                        <h3 class="text-xl md:text-xl font-bold text-[#1E1E1E] mb-1">Inovatif dan Efisien</h3>
+                        <p class="text-base sm:text-base text-[#575757]">
                            Aplikasi ini menghadirkan solusi inovatif untuk mempermudah pengelolaan transaksi dan inventaris toko emas dengan operasional yang efisien dan praktis.
                         </p>
                     </div>
@@ -514,8 +513,8 @@
                     <img src="assets/laporan-icon.svg" alt="Laporan Icon">
                     
                     <div class="flex-1"> 
-                        <h3 class="text-2xl md:text-2xl font-bold text-[#1E1E1E] mb-1">Pengelola Stok yang Akurat</h3>
-                        <p class="text-lg sm:text-lg text-[#575757]">
+                        <h3 class="text-xl md:text-xl font-bold text-[#1E1E1E] mb-1">Pengelola Stok yang Akurat</h3>
+                        <p class="text-base sm:text-base text-[#575757]">
                           Dengan fitur otomatisasi pencatatan stok dan transaksi, Jemari memastikan bahwa setiap barang yang masuk dan keluar tercatat dengan baik.
                         </p>
                     </div>
@@ -547,7 +546,7 @@
                     <div class="flex items-center space-x-4">
                         <img src="assets/datamaster-icon-small.svg" alt="Dashboard Icon" class="mb-2">
                         <div class="flex-1">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-2">Dashboard</h3>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Dashboard</h3>
                         </div>
                     </div>
                     <p class="text-gray-600 text-base mb-3 max-w-md">Fitur ini berfungsi melihat Ringkasan kas, stok, dan penjualan. Biar user langsung liat "hari ini untung apa tekor"</p>
@@ -565,7 +564,7 @@
                     <div class="flex items-center space-x-4">
                         <img src="assets/stok-icon-small.svg" alt="Data Master Icon" class="mb-2">
                         <div class="flex-1">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-2">Data Master</h3>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Data Master</h3>
                         </div>
                     </div>
                     <p class="text-gray-600 text-base mb-3 max-w-md">Data master adalah pusat penyimpanan informasi penting seperti gudang, kas, produk, supplier, dan pelanggan</p>
@@ -583,7 +582,7 @@
                     <div class="flex items-center space-x-4">
                         <img src="assets/role-icon-small.svg" alt="Manajemen Icon" class="mb-2">
                         <div class="flex-1">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-2">Manajemen Akun</h3>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Manajemen Akun</h3>
                         </div>
                     </div>
                     <p class="text-gray-600 text-base mb-3 max-w-lg">Fitur Manajemen Akun berfungsi untuk mengatur pengguna yang memiliki akses ke sistem. sehingga keamanan data lebih terjaga</p>
@@ -602,7 +601,7 @@
                     <div class="flex items-center space-x-4">
                         <img src="assets/transaksi-icon-small.svg" alt="Transaksi Icon" class="mb-2">
                         <div class="flex-1">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-2">Transaksi</h3>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Transaksi</h3>
                         </div>
                     </div>
                     <p class="text-gray-600 text-base mb-3 max-w-md">Fitur Transaksi digunakan untuk mencatat segala aktivitas keluar-masuk barang maupun alur keuangan dalam bisnis</p>
@@ -621,7 +620,7 @@
                     <div class="flex items-center space-x-4">
                         <img src="assets/kas-icon-small.svg" alt="Keuangan Icon" class="mb-2">
                         <div class="flex-1">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-2">Keuangan</h3>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Keuangan</h3>
                         </div>
                     </div>
                     <p class="text-gray-600 text-base mb-3 max-w-md">Fitur Keuangan digunakan untuk mengelola arus masuk dan keluar uang dalam bisnis. Semua transaksi akan dicatat di sini.</p>
@@ -640,7 +639,7 @@
                     <div class="flex items-center space-x-4">
                         <img src="assets/laporan-icon-small.svg" alt="Data Master Icon" class="mb-2">
                         <div class="flex-1">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-2">Laporan</h3>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Laporan</h3>
                         </div>
                     </div>
                     <p class="text-gray-600 text-base mb-3 max-w-md">Fitur Laporan berfungsi untuk menyajikan data hasil aktivitas bisnis dalam bentuk yang rapi dan mudah dipahami</p>
