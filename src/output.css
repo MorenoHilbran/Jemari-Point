@@ -1096,6 +1096,9 @@
   .object-cover {
     object-fit: cover;
   }
+  .p-0\.5 {
+    padding: calc(var(--spacing) * 0.5);
+  }
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
@@ -1125,6 +1128,9 @@
   }
   .p-\[2px\] {
     padding: 2px;
+  }
+  .p-\[10px\] {
+    padding: 10px;
   }
   .p-\[12px\] {
     padding: 12px;
