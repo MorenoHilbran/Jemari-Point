@@ -128,20 +128,22 @@
                 </a>
             </div>
         </div>
-
         <!-- carousel Fitur Data Master -->
 
-        <div class="mt-12 w-[1100px] h-[700px] overflow-hidden">
-            <div class="flex space-x-4 overflow-x-scroll scrollbar-hide">
-                <div class="bg-white px-16 py-8 rounded-xl flex-shrink-0 w-full">
-                    <img src="assets/dashboard-produk.png" alt="Fitur Data Master" class="w-full h-full">
-                </div>
-                <div class="bg-white px-16 py-8 rounded-xl flex-shrink-0 w-full">
-                    <img src="assets/dashboard-produk.png" alt="Fitur Data Master" class="w-full h-full">
-                </div>
-                <div class="bg-white px-16 py-8 rounded-xl flex-shrink-0 w-full">
-                    <img src="assets/dashboard-produk.png" alt="Fitur Data Master" class="w-full h-full">
-                </div>
+        <div x-data="carousel()" class="mt-12 w-[1100px] h-[700px] mx-auto relative overflow-hidden">
+            <div class="flex transition-transform duration-500 ease-in-out h-full"
+                :style="`transform: translateX(-${active * 100}%); width: ${slides.length * 100}%`">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <div
+                        class="flex-shrink-0 w-[1100px] h-[700px] px-4 cursor-pointer"
+                        @click="active = index"
+                    >
+                        <div :class="active === index ? 'opacity-100 scale-100' : 'opacity-40 scale-95'"
+                            class="bg-white px-16 py-8 rounded-xl w-full h-full transition duration-300">
+                            <img :src="slide" alt="Fitur Data Master" class="w-full h-full object-cover rounded-xl">
+                        </div>
+                    </div>
+                </template>
             </div>
         </div>
 
@@ -347,5 +349,19 @@
             </div>
         </div>
     </footer>
+
+    
+    <script>
+    function carousel() {
+        return {
+            active: 0,
+            slides: [
+                'assets/dashboard-produk.png',
+                'assets/dashboard-produk.png',
+                'assets/dashboard-produk.png'
+            ]
+        }
+    }
+</script>
     </body>
 </html>
