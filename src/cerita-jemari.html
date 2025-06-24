@@ -7,6 +7,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <style>
+        /* Animasi untuk slide dari kanan ke kiri */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        /* Kelas untuk menerapkan animasi */
+        .animate-scroll {
+            /* Kecepatan bisa diatur dengan mengubah durasi (misal: 40s) */
+            animation: scroll 30s linear infinite;
+        }
+    </style>
 </head>
 <body class="bg-[#f2f7fa] font-nunito">
     <div class="bg-[#fe8813] w-full p-[16px] sm:p-5 flex flex-col sm:flex-row items-center justify-center sm:justify-center sm:gap-4 shadow-md">
@@ -36,71 +49,205 @@
 
     <section class="px-24 py-24">
         <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-[48px] md:text-[48px] font-bold text-black mb-4">
-                Gak Ribet, Gak Bingung. Begini Cara Jemari Bantu Toko Emas Lebih Maju
+            <h2 class="text-xl md:text-3xl lg:text-4xl font-bold text-black mb-4">
+                Gak Ribet, Gak Bingung. <br> Begini Cara Jemari Bantu Toko Emas Lebih Maju
             </h2>
             <p class="text-gray-600 text-[18px]">Dapatkan data penjualan, stok, hingga gadai dalam satu tempat. </p>
         </div>
     </section>
 
-    <div class=" relative overflow-hidden pb-4"> 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <!-- Testimoni Card 1 -->
-            <div class="bg-white rounded-xl p-8">
-                <div class="flex justify-between p-3">
-                    <img src="assets/quotes-dark.svg" alt="Quotes">
-                    <div class="flex items-center">
-                        <img src="assets/like.svg" alt="Like">
-                        <p class="ml-2">testimoni</p>
+    <div class="relative w-full overflow-hidden pb-4 mb-20"> 
+    <div class="flex w-max animate-scroll hover:[animation-play-state:paused]">
+        
+        <div class="flex">
+            <div class="w-[380px] sm:w-[450px] mx-4 bg-white rounded-xl p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <img src="assets/quotes-dark.svg" alt="Quotes" class="w-8 h-8">
+                        <div class="flex items-center text-sm text-gray-400">
+                            <img src="assets/like.svg" alt="Like" class="w-5 h-5">
+                            <p class="ml-2 font-medium">Testimoni</p>
+                        </div>
                     </div>
+                    <p class="text-lg sm:text-xl text-gray-800 leading-relaxed">
+                        Semenjak pakai Jemari Point, urusan stok dan laporan keuangan jadi jauh lebih mudah. Gak perlu lagi catat manual di buku, semua sudah otomatis dan rapi!
+                    </p>
                 </div>
-                <p class="text-[32px] text-black">
-                    Semenjak pakai Jemari Point, urusan stok dan laporan keuangan jadi jauh lebih mudah. Gak perlu lagi catat manual di buku, semua sudah otomatis dan rapi!
-                </p>
                 <div class="flex flex-col items-start mt-6">
-                    <p class="font-medium text-2xl">Rina</p>
-                    <p class="text-gray-500">Pemilik Toko Emas Surabaya</p>
+                    <p class="font-semibold text-lg">Rina</p>
+                    <p class="text-sm text-gray-500">Pemilik Toko Emas Surabaya</p>
                 </div>
             </div>
-            <!-- Testimoni Card 1 -->
-            <div class="bg-white rounded-xl p-8">
-                <div class="flex justify-between p-3">
-                    <img src="assets/quotes-dark.svg" alt="Quotes">
-                    <div class="flex items-center">
-                        <img src="assets/like.svg" alt="Like">
-                        <p class="ml-2">testimoni</p>
-                    </div>
-                </div>
-                <p class="text-[32px] text-black">
-                    Semenjak pakai Jemari Point, urusan stok dan laporan keuangan jadi jauh lebih mudah. Gak perlu lagi catat manual di buku, semua sudah otomatis dan rapi!
-                </p>
-                <div class="flex flex-col items-start mt-6">
-                    <p class="font-medium text-2xl">Rina</p>
-                    <p class="text-gray-500">Pemilik Toko Emas Surabaya</p>
-                </div>
-            </div>
-            
 
-        <!-- Testimoni Card 1 -->
-            <div class="bg-white rounded-xl p-8">
-                <div class="flex justify-between p-3">
-                    <img src="assets/quotes-dark.svg" alt="Quotes">
-                    <div class="flex items-center">
-                        <img src="assets/like.svg" alt="Like">
-                        <p class="ml-2">testimoni</p>
+            <div class="w-[380px] sm:w-[450px] mx-4 bg-white rounded-xl p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <img src="assets/quotes-dark.svg" alt="Quotes" class="w-8 h-8">
+                        <div class="flex items-center text-sm text-gray-400">
+                            <img src="assets/like.svg" alt="Like" class="w-5 h-5">
+                            <p class="ml-2 font-medium">Testimoni</p>
+                        </div>
                     </div>
+                    <p class="text-lg sm:text-xl text-gray-800 leading-relaxed">
+                        Fitur multi-device sangat membantu. Saya bisa cek laporan dari mana saja, bahkan saat sedang di luar kota. Sangat praktis dan efisien.
+                    </p>
                 </div>
-                <p class="text-[32px] text-black">
-                    Semenjak pakai Jemari Point, urusan stok dan laporan keuangan jadi jauh lebih mudah. Gak perlu lagi catat manual di buku, semua sudah otomatis dan rapi!
-                </p>
                 <div class="flex flex-col items-start mt-6">
-                    <p class="font-medium text-2xl">Rina</p>
-                    <p class="text-gray-500">Pemilik Toko Emas Surabaya</p>
+                    <p class="font-semibold text-lg">Budi</p>
+                    <p class="text-sm text-gray-500">Manajer Toko Perhiasan Jakarta</p>
+                </div>
+            </div>
+
+            <div class="w-[380px] sm:w-[450px] mx-4 bg-white rounded-xl p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <img src="assets/quotes-dark.svg" alt="Quotes" class="w-8 h-8">
+                        <div class="flex items-center text-sm text-gray-400">
+                            <img src="assets/like.svg" alt="Like" class="w-5 h-5">
+                            <p class="ml-2 font-medium">Testimoni</p>
+                        </div>
+                    </div>
+                    <p class="text-lg sm:text-xl text-gray-800 leading-relaxed">
+                        Tim support-nya responsif sekali. Setiap ada kendala, langsung dibantu sampai tuntas. Pelayanannya benar-benar memuaskan!
+                    </p>
+                </div>
+                <div class="flex flex-col items-start mt-6">
+                    <p class="font-semibold text-lg">Ahmad</p>
+                    <p class="text-sm text-gray-500">Pengusaha Emas Bandung</p>
                 </div>
             </div>
         </div>
-    </div>
 
+        <div class="flex">
+            <div class="w-[380px] sm:w-[450px] mx-4 bg-white rounded-xl p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <img src="assets/quotes-dark.svg" alt="Quotes" class="w-8 h-8">
+                        <div class="flex items-center text-sm text-gray-400">
+                            <img src="assets/like.svg" alt="Like" class="w-5 h-5">
+                            <p class="ml-2 font-medium">Testimoni</p>
+                        </div>
+                    </div>
+                    <p class="text-lg sm:text-xl text-gray-800 leading-relaxed">
+                        Semenjak pakai Jemari Point, urusan stok dan laporan keuangan jadi jauh lebih mudah. Gak perlu lagi catat manual di buku, semua sudah otomatis dan rapi!
+                    </p>
+                </div>
+                <div class="flex flex-col items-start mt-6">
+                    <p class="font-semibold text-lg">Rina</p>
+                    <p class="text-sm text-gray-500">Pemilik Toko Emas Surabaya</p>
+                </div>
+            </div>
+            <div class="w-[380px] sm:w-[450px] mx-4 bg-white rounded-xl p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <img src="assets/quotes-dark.svg" alt="Quotes" class="w-8 h-8">
+                        <div class="flex items-center text-sm text-gray-400">
+                            <img src="assets/like.svg" alt="Like" class="w-5 h-5">
+                            <p class="ml-2 font-medium">Testimoni</p>
+                        </div>
+                    </div>
+                    <p class="text-lg sm:text-xl text-gray-800 leading-relaxed">
+                        Fitur multi-device sangat membantu. Saya bisa cek laporan dari mana saja, bahkan saat sedang di luar kota. Sangat praktis dan efisien.
+                    </p>
+                </div>
+                <div class="flex flex-col items-start mt-6">
+                    <p class="font-semibold text-lg">Budi</p>
+                    <p class="text-sm text-gray-500">Manajer Toko Perhiasan Jakarta</p>
+                </div>
+            </div>
+            <div class="w-[380px] sm:w-[450px] mx-4 bg-white rounded-xl p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <img src="assets/quotes-dark.svg" alt="Quotes" class="w-8 h-8">
+                        <div class="flex items-center text-sm text-gray-400">
+                            <img src="assets/like.svg" alt="Like" class="w-5 h-5">
+                            <p class="ml-2 font-medium">Testimoni</p>
+                        </div>
+                    </div>
+                    <p class="text-lg sm:text-xl text-gray-800 leading-relaxed">
+                        Tim support-nya responsif sekali. Setiap ada kendala, langsung dibantu sampai tuntas. Pelayanannya benar-benar memuaskan!
+                    </p>
+                </div>
+                <div class="flex flex-col items-start mt-6">
+                    <p class="font-semibold text-lg">Ahmad</p>
+                    <p class="text-sm text-gray-500">Pengusaha Emas Bandung</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<footer class="bg-[linear-gradient(to_left,#F5AF19,#FF7F00,#E97000)] text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-5 gap-8 mb-8">
+                <div>
+                    <img src="assets/Jemari-icon-light.svg" alt="Jemari Point">
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-3">Jemari Point</h4>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Beranda</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">FAQ</a></li>
+                        <li class="mb-1"><a href="input-masterdata.html" class="hover:text-orange-400 text-sm">Video Tutorial</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Kebijakan Privasi</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Syarat dan Ketentuan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-3">Perusahaan</h4>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Tentang Kami</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Hubungi Kami</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Karir</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-3">Harga</h4>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Desktop</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Detail Paket</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-orange-400 text-sm">Promosi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-3">Office</h4>
+                    <p class="text-sm">Jemari Point berlokasi di Purwokerto, Banyumas, Jawa Tengah. Jl. Kol. Sugiri  No. 22 Purwokerto</p>
+                </div>
+            </div>
+            <div class="border-t border-white text-white pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-center mb-4 md:mb-0 md:order-2 md:flex-grow">
+                    Copyright &copy;2025 Jemari Point
+                </p>
+
+                <div class="flex space-x-4 md:order-1">
+                    <a href="#" class="text-white-400 hover:text-orange-400">
+                        <img src="assets/youtube-icon.svg" class="w-6 h-6" alt="youtube">
+                        <span class="sr-only">YouTube</span>
+                    </a>
+                    <a href="#" class="text-white-400 hover:text-orange-400">
+                        <img src="assets/facebook-icon.svg" class="w-6 h-6" alt="Facebook">
+                        <span class="sr-only">Facebook</span>
+                    </a>
+                    <a href="#" class="text-white-400 hover:text-orange-400">
+                        <img src="assets/instagram-icon.svg" class="w-6 h-6" alt="Instagram">
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                    <a href="#" class="text-white-400 hover:text-orange-400">
+                        <img src="assets/mail-icon.svg" class="w-6 h-6" alt="Instagram">
+                        <span class="sr-only">Email</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex md:space-x-4 md:order-3 invisible" aria-hidden="true">
+                    <svg class="w-6 h-6"><path d=""/></svg>
+                    <svg class="w-6 h-6"><path d=""/></svg>
+                    <svg class="w-6 h-6"><path d=""/></svg>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

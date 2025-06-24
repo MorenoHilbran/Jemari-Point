@@ -37,16 +37,16 @@
     </nav>
 
     <div class="container mx-auto mt-[77px]">
-        <h2 class="text-[48px] md:text-[48px] font-bold text-[#D56C06] mb-4 text-center">Pilih Paket yang Cocok Buat Toko Emas Kamu</h2>
-        <p class="text-gray-600 max-w-6xl mx-auto text-center text-[20px]">Harga fleksibel, Bisnismu Bisa Tumbuh Pelan-Pelan Tapi Pasti</p>
+        <h2 class="text-xl md:text-3xl lg:text-4xl font-bold text-[#D56C06] mb-4 text-center">Pilih Paket yang Cocok Buat Toko Emas Kamu</h2>
+        <p class="text-gray-600 max-w-6xl mx-auto text-center text-lg">Harga fleksibel, Bisnismu Bisa Tumbuh Pelan-Pelan Tapi Pasti</p>
     </div>
 
     <section class="py-16 px-4">
         <div class="text-center mb-12 gap-2">
             <div class="inline-block bg-orange-100 text-[#D56C06] px-4 py-1 rounded-full mb-4">
-                <span class="text-lg font-medium">Paket Harga</span>
+                <span class="text-base font-medium">Paket Harga</span>
             </div>
-            <h1 class="text-[40px] font-bold text-gray-800 mt-4">Paket Siap Pakai</h1>
+            <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mt-4">Paket Siap Pakai</h1>
             <p class="text-gray-600 text-lg mt-4 mb-6">Solusi lengkap dengan harga hemat untuk kebutuhan toko emas anda</p>
 
             <div class="inline-flex items-center gap-3 justify-center bg-gray-50 p-1 rounded-md border border-gray-200">
@@ -387,49 +387,94 @@
         </div>
     </section>
 
-    <section class=" px-12 py-12">
+    <section class="container mx-auto px-4 sm:px-6 lg:px-12 py-12">
     <div class="text-center mb-10">
         <h1 class="text-3xl font-bold text-gray-800 mb-3">Pertanyaan Umum</h1>
         <p class="text-gray-600 max-w-3xl mx-auto">
-        Kumpulan pertanyaan yang paling sering ditanyakan, lengkap dengan penjelasan yang mudah dipahami
+        Kumpulan pertanyaan yang paling sering ditanyakan, lengkap dengan penjelasan yang mudah dipahami.
         </p>
     </div>
 
-    <div class="space-y-6">
-        <div class="bg-white rounded-xl p-5 flex gap-4 w-full relative justify-between">
-                <div class="pl-2">
-                <h2 class="text-black font-semibold text-2xl mb-2">Apakah ada masa percobaan gratis?</h2>
-                <p class="text-gray-600 text-md">
+    <div class="space-y-4">
+        
+        <div x-data="{ open: true }" class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left p-5 focus:outline-none">
+                <h2 class="text-gray-800 font-semibold text-lg sm:text-xl">Apakah ada masa percobaan gratis?</h2>
+                <img src="assets/faq-icon.svg" alt="Toggle Icon" class=" transform transition-transform duration-300" :class="{ '-rotate-45': open }">
+            </button>
+            <div x-show="open" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 -translate-y-4"
+                 x-transition:enter-end="opacity-100 translate-y-0"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100 translate-y-0"
+                 x-transition:leave-end="opacity-0 -translate-y-4"
+                 class="px-5 pb-5">
+                <p class="text-gray-600 text-base">
                     Ya, kami menawarkan demo gratis untuk semua modul agar Anda dapat mengevaluasi kesesuaian dengan bisnis Anda.
                 </p>
-                </div>
-                <img src="assets/faqanswer-icon.svg" alt="FAQ Icon">
             </div>
+        </div>
 
-        <div class="bg-white rounded-xl p-4 flex gap-4 w-full relative justify-between">
-                <div class="pl-2">
-                <h2 class="text-black font-semibold text-2xl mb-1">Apakah saya bisa menambah modul di kemudian hari?</h2>
-                </div>
-                <img src="assets/faq-icon.svg" alt="FAQ Icon">
+        <div x-data="{ open: false }" class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left p-5 focus:outline-none">
+                <h2 class="text-gray-800 font-semibold text-lg sm:text-xl">Apakah saya bisa menambah modul di kemudian hari?</h2>
+                <img src="assets/faq-icon.svg" alt="Toggle Icon" class=" transform transition-transform duration-300" :class="{ '-rotate-45': open }">
+            </button>
+            <div x-show="open"
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 -translate-y-4"
+                 x-transition:enter-end="opacity-100 translate-y-0"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100 translate-y-0"
+                 x-transition:leave-end="opacity-0 -translate-y-4"
+                 class="px-5 pb-5" style="display: none;">
+                <p class="text-gray-600 text-base">
+                    Tentu saja! Anda dapat dengan mudah menambah atau mengurangi modul sesuai dengan perkembangan dan kebutuhan bisnis Anda. Sistem kami sangat fleksibel untuk mendukung pertumbuhan Anda.
+                </p>
             </div>
+        </div>
 
-        <div class="bg-white rounded-xl p-4 flex gap-4 w-full relative justify-between">
-                <div class="pl-2">
-                <h2 class="text-black font-semibold text-2xl mb-1">Apakah ada diskon untuk pembayaran tahunan?</h2>
-                </div>
-                <img src="assets/faq-icon.svg" alt="FAQ Icon">
+        <div x-data="{ open: false }" class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left p-5 focus:outline-none">
+                <h2 class="text-gray-800 font-semibold text-lg sm:text-xl">Apakah ada diskon untuk pembayaran tahunan?</h2>
+                <img src="assets/faq-icon.svg" alt="Toggle Icon" class=" transform transition-transform duration-300" :class="{ '-rotate-45': open }">
+            </button>
+            <div x-show="open"
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 -translate-y-4"
+                 x-transition:enter-end="opacity-100 translate-y-0"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100 translate-y-0"
+                 x-transition:leave-end="opacity-0 -translate-y-4"
+                 class="px-5 pb-5" style="display: none;">
+                <p class="text-gray-600 text-base">
+                    Ya, kami memberikan diskon menarik untuk paket langganan tahunan. Ini adalah pilihan yang lebih hemat untuk mendapatkan semua fitur premium kami. Silakan hubungi tim penjualan untuk informasi lebih lanjut.
+                </p>
             </div>
+        </div>
 
-        <div class="bg-white rounded-xl p-4 flex gap-4 w-full relative justify-between">
-                <div class="pl-2">
-                <h2 class="text-black font-semibold text-2xl mb-1">Apakah ada sesi konsultasi gratis?</h2>
-                </div>
-                <img src="assets/faq-icon.svg" alt="FAQ Icon">
+        <div x-data="{ open: false }" class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left p-5 focus:outline-none">
+                <h2 class="text-gray-800 font-semibold text-lg sm:text-xl">Apakah ada sesi konsultasi gratis?</h2>
+                <img src="assets/faq-icon.svg" alt="Toggle Icon" class=" transform transition-transform duration-300" :class="{ '-rotate-45': open }">
+            </button>
+            <div x-show="open"
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 -translate-y-4"
+                 x-transition:enter-end="opacity-100 translate-y-0"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100 translate-y-0"
+                 x-transition:leave-end="opacity-0 -translate-y-4"
+                 class="px-5 pb-5" style="display: none;">
+                <p class="text-gray-600 text-base">
+                    Kami menyediakan sesi konsultasi awal gratis untuk membantu Anda memahami bagaimana aplikasi kami dapat membantu bisnis Anda. Tim kami akan memandu Anda melalui fitur-fitur utama dan menjawab semua pertanyaan Anda.
+                </p>
             </div>
-
+        </div>
 
     </div>
-    </section>
+</section>
 
 
    <div class="text-center mb-10 mt-10 p-12">
@@ -560,6 +605,8 @@
         monthlyBtn.classList.remove('bg-[#FF7F00]', 'text-white');
         monthlyBtn.classList.add('text-orange-500');
       });
+      
     </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>
