@@ -146,37 +146,58 @@
 
     <div class="relative lg:w-1/2 flex justify-center lg:justify-end">
     
-        <div data-aos="fade-up" class="relative z-10 bg-white/20 backdrop-blur-lg rounded-2xl p-4 w-full max-w-xl">
+        <div data-aos="fade-up" class="relative z-10 bg-white/20 backdrop-blur-lg rounded-2xl p-4 w-full">
             <img src="assets/background-dashboard.webp" alt="Jemari Point Dashboard" 
                  class="w-full h-full object-contain">
         </div>
 
         <div data-aos="zoom-in" class="absolute z-20 top-0 -right-4 sm:right-0 md:-top-4 md:-right-8 transform">
             <div class="bg-white p-3 sm:p-4 rounded-xl w-fit shadow-lg">
-                <img src="assets/kategori-barang-jumlah.png" alt="Kategori Barang Jumlah" class="w-32 sm:w-[160px]">
+                <img src="assets/kategori-barang-jumlah.png" alt="Kategori Barang Jumlah" class="w-full sm:w-[160px]">
             </div>
         </div>
 
-        <div data-aos="zoom-in" class="absolute z-20 -bottom-8 -left-4 sm:-left-10 md:bottom-12 md:-left-12 transform">
+        <div data-aos="zoom-in" class="absolute z-20 bottom-18 -left-10 sm:-left-10 md:bottom-24 md:-left-12 transform">
             <div class="bg-white p-3 sm:p-4 rounded-xl w-fit shadow-lg">
-                <img src="assets/kategori-barang-nominal.png" alt="Kategori Barang Nominal" class="w-32 sm:w-[160px]">
+                <img src="assets/kategori-barang-nominal.png" alt="Kategori Barang Nominal" class="w-full sm:w-[160px] max-w-full h-auto">
             </div>
         </div>
 
-        <div data-aos="fade-up" class="absolute z-20 -bottom-12 left-1/2 transform -translate-x-1/2 bg-white rounded-xl p-4 w-[90%] sm:w-auto shadow-lg">
-            <div class="flex flex-row items-center">
-                <nav class="flex flex-row items-center space-x-2 sm:space-x-4 overflow-x-auto py-2 px-1 border border-gray-200 rounded-full">
-                    <a href="#" class="bg-[#EAF8F7] font-semibold text-[#196D6B] text-[9px] sm:text-xs px-3 sm:px-4 py-1 rounded-full whitespace-nowrap hover:bg-[#C1E9E6] transition-colors">Dashboard</a>
-                    <a href="#" class="text-gray-600 font-semibold text-[9px] sm:text-xs px-3 sm:px-4 py-1 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors">Penyesuaian Kas</a>
-                    <a href="#" class="text-gray-600 font-semibold text-[9px] sm:text-xs px-3 sm:px-4 py-1 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors">Manajemen Produk</a>
-                    <a href="#" class="text-gray-600 font-semibold text-[9px] sm:text-xs px-3 sm:px-4 py-1 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors">Penyesuaian Stok</a>
-                </nav>
-            </div>
-            <div class="flex flex-col items-start gap-1 mt-2">
-                <h2 class="text-[#196D6B] text-sm sm:text-base font-semibold">Dashboard</h2>
-                <p class="text-gray-500 text-xs sm:text-sm max-w-lg"> Kelola data makin gampang, grafik barang bisa dipantau berdasarkan jangka waktu</p>
-            </div>
-        </div>
+       <div data-aos="fade-up"
+     class="absolute z-20 -bottom-6 right-12 transform  bg-white rounded-xl p-3 shadow-lg">
+    
+    <!-- Navigation Pills -->
+    <div class="flex flex-row items-center">
+        <nav class="flex flex-row items-center space-x-1 sm:space-x-2 py-1 px-1 border border-gray-200 rounded-full">
+            <a href="#"
+               class="bg-[#EAF8F7] font-medium text-[9px] sm:text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap hover:bg-[#C1E9E6] transition-colors text-[#196D6B]">
+                Dashboard
+            </a>
+            <a href="#"
+               class="text-gray-600 font-medium text-[9px] sm:text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors">
+                Penyesuaian Kas
+            </a>
+            <a href="#"
+               class="text-gray-600 font-medium text-[9px] sm:text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors">
+                Manajemen Produk
+            </a>
+            <a href="#"
+               class="text-gray-600 font-medium text-[9px] sm:text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors">
+                Penyesuaian Stok
+            </a>
+        </nav>
+    </div>
+
+    <!-- Judul dan Deskripsi -->
+    <div class="flex flex-col items-start gap-1 mt-2">
+        <h2 class="text-[#196D6B] text-xs sm:text-sm font-semibold">Dashboard</h2>
+        <p class="text-gray-500 text-[11px] sm:text-xs leading-tight max-w-sm">
+            Kelola data makin gampang, grafik barang bisa dipantau berdasarkan jangka waktu
+        </p>
+    </div>
+</div>
+
+
     </div>
 </div>
     </section>
