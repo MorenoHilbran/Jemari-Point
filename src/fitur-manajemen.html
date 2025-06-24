@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-[#f2f7fa] font-nunito">
     <div class=" bg-[#fe8813] w-full p-[16px] sm:p-5 flex flex-col sm:flex-row items-center justify-center sm:justify-center sm:gap-4 shadow-md">
@@ -21,18 +22,80 @@
         </div>
     </div>
 
-    <nav class="bg-white sticky top-0 z-50"> 
-        <div class="container mx-auto px-[97px] py-[18px] flex justify-between items-center">
-            <img src="assets/Jemari-icon-orange.svg">
+    <nav class="bg-white sticky top-0 z-50" x-data="{ isMenuOpen: false }">
+    <div class="container mx-auto px-[28px] py-[18px] md:px-[97px] flex justify-between items-center">
+        <a href="index.html">
+            <img src="assets/Jemari-icon-orange.svg" alt="Jemari Logo">
+        </a>
 
-            <div class="hidden md:flex space-x-12 items-center">
-                <a href="index.html" class="text-black hover:text-[#FF7F00] hover:border-b-2 hover:border-[#FF7F00]">Home</a> 
-                <a href="fitur.html" class="text-[#FF7F00] hover:text-[#FF7F00] border-b-2 border-[#FF7F00]">Fitur</a>
-                <a href="hargabulanan.html" class="text-black hover:text-[#FF7F00] hover:border-b-2 hover:border-[#FF7F00]">Harga</a>
-                <a href="artikel.html" class="text-black hover:text-[#FF7F00] hover:border-b-2 hover:border-[#FF7F00]">Artikel</a>
-                <a href="cerita-jemari.html" class="text-black hover:text-[#FF7F00] hover:border-b-2 hover:border-[#FF7F00]">#CeritaJemari</a>
+        <!-- Tombol Mobile -->
+        <button type="button" @click="isMenuOpen = !isMenuOpen" class="md:hidden" :aria-expanded="isMenuOpen" aria-controls="mobile-menu">
+            <img src="assets/navbar-mobile-orange.svg" alt="Buka Menu" class="cursor-pointer">
+        </button>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex space-x-12 items-center">
+            <a href="index.html" class="text-black hover:text-[#FF7F00] hover:border-b-2 hover:border-[#FF7F00]">Home</a> 
+            <a href="fitur.html" class="text-[#FF7F00] border-b-2 border-[#FF7F00]">Fitur</a>
+            <a href="hargabulanan.html" class="text-black hover:text-[#FF7F00] hover:border-b-2 hover:border-[#FF7F00]">Harga</a>
+            <a href="artikel.html" class="text-black hover:text-[#FF7F00] hover:border-b-2 hover:border-[#FF7F00]">Artikel</a>
+            <a href="cerita-jemari.html" class="text-black hover:text-[#FF7F00] hover:border-b-2 hover:border-[#FF7F00]">#CeritaJemari</a>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div 
+        id="mobile-menu"
+        x-show="isMenuOpen" 
+        x-cloak
+        class="md:hidden fixed inset-0 z-40" 
+        role="dialog" 
+        aria-modal="true"
+    >
+        <!-- Overlay -->
+        <div 
+            @click="isMenuOpen = false"
+            x-transition:enter="transition-opacity ease-linear duration-300"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity ease-linear duration-300"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="fixed inset-0 bg-black bg-opacity-50"
+        ></div>
+
+        <!-- Panel -->
+        <div 
+            x-show="isMenuOpen"
+            x-transition:enter="transition ease-in-out duration-300 transform"
+            x-transition:enter-start="translate-x-full"
+            x-transition:enter-end="translate-x-0"
+            x-transition:leave="transition ease-in-out duration-300 transform"
+            x-transition:leave-start="translate-x-0"
+            x-transition:leave-end="translate-x-full"
+            class="relative w-64 max-w-[80%] ml-auto h-full bg-white shadow-xl py-4 flex flex-col"
+        >
+            <!-- Header Mobile -->
+            <div class="flex items-center justify-between px-4 pb-2 border-b border-gray-200">
+                <h2 class="text-lg font-semibold text-[#FF7F00]">Menu</h2>
+                <button @click="isMenuOpen = false" class="p-1 text-[#FF7F00] hover:text-orange-400">
+                    <span class="sr-only">Tutup menu</span>
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Link Mobile -->
+            <div class="mt-4 space-y-2">
+                <a @click="isMenuOpen = false" href="index.html" class="block text-black py-2 px-4 hover:bg-orange-100">Home</a>
+                <a @click="isMenuOpen = false" href="fitur.html" class="block text-[#FF7F00] font-semibold py-2 px-4 bg-orange-100">Fitur</a>
+                <a @click="isMenuOpen = false" href="hargabulanan.html" class="block text-black py-2 px-4 hover:bg-orange-100">Harga</a>
+                <a @click="isMenuOpen = false" href="artikel.html" class="block text-black py-2 px-4 hover:bg-orange-100">Artikel</a>
+                <a @click="isMenuOpen = false" href="cerita-jemari.html" class="block text-black py-2 px-4 hover:bg-orange-100">#CeritaJemari</a>
             </div>
         </div>
+    </div>
     </nav>
 
     <section class="px-4 md:px-24 py-16 bg-[#F2F7FA]">
