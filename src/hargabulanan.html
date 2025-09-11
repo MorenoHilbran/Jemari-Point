@@ -112,10 +112,10 @@
             <p class="text-gray-600 text-lg mt-4 mb-6">Solusi lengkap dengan harga hemat untuk kebutuhan toko emas anda</p>
 
             <div class="inline-flex items-center gap-3 justify-center bg-gray-50 p-1 rounded-md border border-gray-200">
-                <button id="monthly-btn" class="px-4 py-1 rounded-md bg-[#FF7F00] text-white font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-offset-2">
+                <button id="monthly-btn" class="cursor-pointer px-4 py-1 rounded-md bg-[#FF7F00] text-white font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-offset-2">
                     Bulan
                 </button>
-                <button id="yearly-btn" class="px-4 py-1 text-orange-500 font-medium hover:bg-gray-100 rounded-md transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
+                <button id="yearly-btn" class="cursor-pointer px-4 py-1 text-orange-500 font-medium rounded-md transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
                     Tahun
                 </button>
             </div>
@@ -159,9 +159,11 @@
                     href="#"
                     class="group relative block w-full text-center rounded-lg p-[2px] bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 font-semibold mt-auto"
                     >
-                        <span class="block whitespace-nowrap rounded-[6px] bg-white px-6 py-2 text-orange-500">
-                            Pilih Paket
-                        </span>
+                        <span class="block whitespace-nowrap rounded-[6px] bg-white px-6 py-2 text-orange-500
+                                cursor-pointer transition-colors duration-200 
+                                hover:bg-orange-500 hover:text-white">
+                        Pilih Paket
+                    </span>
                     </a>
                 </div>
 
@@ -275,7 +277,9 @@
                     href="#"
                     class="group relative block w-full text-center rounded-lg p-[2px] bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 font-semibold"
                     >
-                    <span class="block whitespace-nowrap rounded-[6px] bg-white px-6 py-2 text-orange-500">
+                    <span class="block whitespace-nowrap rounded-[6px] bg-white px-6 py-2 text-orange-500
+                                cursor-pointer transition-colors duration-200 
+                                hover:bg-orange-500 hover:text-white">
                         Pilih Paket
                     </span>
                     </a>
@@ -335,7 +339,7 @@
                         <p>Ultimate</p>
                     </div>
 
-                    <div class="text-center bg-[#FF7F00] text-white px-2 py-2 rounded-full font-medium text-xs">
+                    <div class="flex items-center justify-center bg-[#FF7F00] text-white px-2 py-1 rounded-full font-medium text-xs">
                         Paling Populer
                     </div>
                 </div>
@@ -460,7 +464,7 @@
     <div class="space-y-4">
         
         <div x-data="{ open: true }" class="bg-white rounded-xl overflow-hidden">
-            <button @click="open = !open" class="w-full flex justify-between items-center text-left p-5 focus:outline-none">
+            <button @click="open = !open" class="cursor-pointer w-full flex justify-between items-center text-left p-5 focus:outline-none">
                 <h2 class="text-gray-800 font-semibold text-lg sm:text-xl">Apakah ada masa percobaan gratis?</h2>
                 <img src="assets/faq-icon.svg" alt="Toggle Icon" class=" transform transition-transform duration-300" :class="{ '-rotate-45': open }">
             </button>
@@ -479,7 +483,7 @@
         </div>
 
         <div x-data="{ open: false }" class="bg-white rounded-xl overflow-hidden">
-            <button @click="open = !open" class="w-full flex justify-between items-center text-left p-5 focus:outline-none">
+            <button @click="open = !open" class="cursor-pointer w-full flex justify-between items-center text-left p-5 focus:outline-none">
                 <h2 class="text-gray-800 font-semibold text-lg sm:text-xl">Apakah saya bisa menambah modul di kemudian hari?</h2>
                 <img src="assets/faq-icon.svg" alt="Toggle Icon" class=" transform transition-transform duration-300" :class="{ '-rotate-45': open }">
             </button>
@@ -498,7 +502,7 @@
         </div>
 
         <div x-data="{ open: false }" class="bg-white rounded-xl overflow-hidden">
-            <button @click="open = !open" class="w-full flex justify-between items-center text-left p-5 focus:outline-none">
+            <button @click="open = !open" class="cursor-pointer w-full flex justify-between items-center text-left p-5 focus:outline-none">
                 <h2 class="text-gray-800 font-semibold text-lg sm:text-xl">Apakah ada diskon untuk pembayaran tahunan?</h2>
                 <img src="assets/faq-icon.svg" alt="Toggle Icon" class=" transform transition-transform duration-300" :class="{ '-rotate-45': open }">
             </button>
@@ -517,7 +521,7 @@
         </div>
 
         <div x-data="{ open: false }" class="bg-white rounded-xl overflow-hidden">
-            <button @click="open = !open" class="w-full flex justify-between items-center text-left p-5 focus:outline-none">
+            <button @click="open = !open" class="cursor-pointer w-full flex justify-between items-center text-left p-5 focus:outline-none">
                 <h2 class="text-gray-800 font-semibold text-lg sm:text-xl">Apakah ada sesi konsultasi gratis?</h2>
                 <img src="assets/faq-icon.svg" alt="Toggle Icon" class=" transform transition-transform duration-300" :class="{ '-rotate-45': open }">
             </button>
