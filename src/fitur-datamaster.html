@@ -98,14 +98,14 @@
     </div>
     </nav>
 
-    <section class="flex flex-col justify-center items-center mx-auto mt-12 px-[101px] pt-[53px] pb-[120px] text-center gap-8">
-        <div class="inline-block bg-[#FF7F0017] text-[#D56C06] px-4 py-1 rounded-full">
+    <section class="flex flex-col justify-center items-center mx-auto mt-12 pt-[53px] pb-[120px] text-center ">
+        <div class="inline-block bg-[#FF7F0017] text-[#D56C06] px-4 py-1 mb-4 rounded-full">
             <span class="text-base font-bold">#Fitur Data Master</span>
         </div>
 
-        <div class="max-w-4xl">
-            <h2 class="text-[36px] md:text-[48px] font-bold text-black">Gudang, Uang, Produk, Pelanggan? Gasss Semua Ada di Data Master!</h2>
-            <p class="text-gray-600 text-[20px]">Pastikan stok produk sesuai antara sistem dan fisik semuanya diatur lewat Jemari Point</p>
+        <div class="max-w-4xl p-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-black mb-4">Gudang, Uang, Produk, Pelanggan? Gasss Semua Ada di Data Master!</h2>
+            <p class="text-gray-600 text-[20px] mb-4">Pastikan stok produk sesuai antara sistem dan fisik semuanya diatur lewat Jemari Point</p>
         </div>
 
         <div class="flex flex-col md:flex-row items-center justify-center gap-4">
@@ -128,36 +128,103 @@
                 </a>
             </div>
         </div>
-        <!-- carousel Fitur Data Master -->
 
-        <div x-data="carousel()" class="mt-12 w-[1100px] h-[700px] mx-auto relative overflow-hidden">
-            <div class="flex transition-transform duration-500 ease-in-out h-full"
-                :style="`transform: translateX(-${active * 100}%); width: ${slides.length * 100}%`">
-                <template x-for="(slide, index) in slides" :key="index">
-                    <div
-                        class="flex-shrink-0 w-[1100px] h-[700px] px-4 cursor-pointer"
-                        @click="active = index"
-                    >
-                        <div :class="active === index ? 'opacity-100 scale-100' : 'opacity-40 scale-95'"
-                            class="bg-white px-16 py-8 rounded-xl w-full h-full transition duration-300">
-                            <img :src="slide" alt="Fitur Data Master" class="w-full h-full object-cover rounded-xl">
-                        </div>
-                    </div>
-                </template>
+        <!-- Carousel -->
+        <div
+        x-data="carousel()"
+        x-init="slides = [
+            'assets/dashboard-produk.png',
+            'assets/dashboard-produk.png',
+            'assets/dashboard-produk.png'
+        ]"
+        class="mt-12 p-4 md:p-8 w-full max-w-5xl h-[300px] md:h-[650px] mx-auto relative overflow-hidden select-none rounded-xl bg-white"
+        @pointerdown.passive="onPointerDown($event)"
+        @pointermove.passive="onPointerMove($event)"
+        @pointerup="onPointerUp()"
+        @pointercancel="onPointerUp()"
+        @mouseleave="onPointerUp()"
+        @touchstart.passive="onPointerDown($event.touches ? $event.touches[0] : $event)"
+        @touchmove.passive="onPointerMove($event.touches ? $event.touches[0] : $event)"
+        @touchend="onPointerUp()"
+        role="region"
+        aria-roledescription="carousel"
+        :aria-label="`Carousel Fitur Data Master, slide ${active+1} dari ${slides.length}`"
+        tabindex="0"
+        >
+        <!-- Track -->
+            <div class="flex h-full transition-transform duration-500 ease-in-out" :style="trackStyle()">
+           <template x-for="(slide, index) in slides" :key="index">
+            <div
+                class="flex-none px-0 md:px-2 cursor-pointer"
+                :style="`width: ${100 / slides.length}%`"
+                @click="go(index)"
+                role="group"
+                :aria-label="`Slide ${index+1}`"
+            >
+                <div
+                class="bg-white p-2 md:px-10 md:py-6 rounded-xl w-full h-full grid place-items-center transition duration-300"
+                :class="active === index ? 'opacity-100 scale-100' : 'opacity-60 md:opacity-40 scale-100 md:scale-95'"
+                >
+                <img
+                    :src="slide"
+                    alt="Fitur Data Master"
+                    class="block max-h-[200px] md:max-h-[520px] max-w-[90%] object-contain rounded-xl"
+                >
+                </div>
             </div>
+            </template>
+
+            </div>
+
+
+        <!-- Tombol panah (desktop) -->
+        <div class="hidden md:flex items-center justify-between absolute inset-y-0 left-0 right-0 px-4 pointer-events-none">
+            <button
+            class="pointer-events-auto inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/80 shadow hover:bg-white focus:outline-none"
+            @click.stop="prev()"
+            aria-label="Sebelumnya"
+            >
+            <!-- Left arrow -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M15 19l-7-7 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+            <button
+            class="pointer-events-auto inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/80 shadow hover:bg-white focus:outline-none"
+            @click.stop="next()"
+            aria-label="Berikutnya"
+            >
+            <!-- Right arrow -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+        </div>
+
+        <!-- Indicator dots (mobile) -->
+        <div class="md:hidden absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2">
+            <template x-for="(slide, i) in slides" :key="'dot-'+i">
+            <button
+                class="w-2.5 h-2.5 rounded-full transition-all"
+                :class="i === active ? 'w-5 bg-gray-800' : 'bg-gray-400/70'"
+                @click="go(i)"
+                :aria-label="`Ke slide ${i+1}`"
+            ></button>
+            </template>
+        </div>
         </div>
 
 
-         <div class="flex flex-col items-start mx-auto mt-22">
+         <div class="flex flex-col items-start p-6 md:p-12 mx-auto mt-22">
             <div class="flex flex-col md:flex-row items-stretch gap-4">
                 <!-- KIRI: Teks dan Gambar Manajemen Gudang -->
                 <div class="flex-1 flex flex-col gap-6 bg-white rounded-xl p-8">
                 <!-- Label + Judul + Deskripsi -->
                 <div class="flex flex-col text-left mt-4">
-                    <div class="inline-block bg-[#FF7F0017] text-[#D56C06] px-4 py-1 rounded-full mb-6 mt-8 w-fit">
+                    <div class="inline-block bg-[#FF7F0017] text-[#D56C06] px-4 py-1 rounded-full mb-3 w-fit">
                         <span class="text-base font-medium">Lokasi Gudang Tercatat</span>
                     </div>
-                    <h2 class="text-3xl font-bold mb-4">Manajemen Gudang</h2>
+                    <h2 class="text-2xl md:text-2xl font-bold mb-4">Manajemen Gudang</h2>
                     <p class="text-gray-600 text-lg mb-4">
                     Fitur ini membantu kamu memantau pergerakan barang masuk dan keluar, mengatur lokasi penyimpanan, serta memastikan ketersediaan stok selalu akurat.
                     </p>
@@ -179,13 +246,13 @@
         </div>
 
 
-        <div class="flex flex-col items-start mx-auto mt-20">
+        <div class="flex flex-col items-start p-6 md:p-12 mx-auto mt-20">
             <div class="inline-block bg-[#FF7F0017] text-[#D56C06] px-4 py-1 rounded-full mb-4">
                 <span class="text-base font-medium">Manajemen Produk</span>
             </div>
             <!-- Judul dan Deskripsi -->
-                <h2 class="text-3xl font-semibold text-gray-800 mb-4">Tambah Daftar Produk</h2>
-                <p class="text-gray-600 text-lg">
+                <h2 class="text-2xl md:text-2xl font-bold text-gray-800 mb-4">Tambah Daftar Produk</h2>
+                <p class="text-gray-600 text-lg text-left">
                     Jemari point akan meminta user untuk memasukkan kebutuhan yang harus ada di dalam menu produk
                 </p>
             <div class="bg-white rounded-xl flex flex-col md:flex-row items-center justify-center mt-12 gap-4 p-12 w-full">
@@ -200,7 +267,7 @@
                 <div class="inline-block bg-[#FF7F0017] text-[#D56C06] px-4 py-1 rounded-full mb-4">
                     <span class="text-base font-medium">Akun Kas</span>
                 </div>
-                <h2 class="text-4xl font-semibold text-gray-800 mb-4">Uang Keluar Masuk? Auto Tercatat!</h2>
+                <h2 class="text-2xl md:text-2xl font-bold text-gray-800 mb-4">Uang Keluar Masuk? Auto Tercatat!</h2>
                 <p class="text-gray-600 text-xl">
                     Dapatkan laporan aset bisnis mu secara realtime dan mendalam.
                 </p>
@@ -212,7 +279,7 @@
             </div>
         </div>
 
-       <div class="flex flex-col md:flex-row gap-8 mt-24">
+       <div class="flex flex-col md:flex-row p-6 md:p-12 mt-6 md:mt-8 mb-8">
             
             <div class="flex flex-col gap-6">
                 
@@ -221,11 +288,11 @@
                 </div>
 
                 
-                <div class="flex flex-col items-start text-left max-w-md">
+                <div class="flex flex-col items-start text-left max-w-md mb-4 mt-6">
                     <div class="inline-block bg-[#FF7F0017] text-[#D56C06] px-4 py-1 rounded-full mb-4">
                         <span class="text-base font-medium">Data Supplier</span>
                     </div>
-                    <h2 class="text-4xl font-semibold text-gray-800 mb-4">Tambah Daftar Supplier</h2>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Tambah Daftar Supplier</h2>
                     <p class="text-gray-600 text-xl">
                         Jemari point akan meminta user untuk memasukkan kebutuhan yang harus ada di dalam menu produk
                     </p>
@@ -239,8 +306,8 @@
         </div>
 
 
-        <div class="flex flex-col items-center mx-auto mt-24">
-        <h2 class="text-4xl md:text-5xl font-semibold text-gray-800 mb-4 text-center">
+        <div class="flex flex-col p-6 md:p-12 items-center mx-auto mt-6">
+        <h2 class="text-2xl font-bold md:text-2xl  text-gray-800 mb-4 text-center">
             Pelanggan Banyak? Gak Masalah, Bisa Diatur!
         </h2>
         <p class="text-gray-600 max-w-4xl mx-auto text-center text-lg mb-12">
@@ -252,7 +319,7 @@
         </div>
 
         <div class="md:px-28 mt-12 flex justify-center items-center">
-            <h2 class="text-3xl font-bold text-gray-800 text-center">
+            <h2 class="text-2xl font-bold text-gray-800 text-center">
                 Kelola Keuangan Bisnismu Lebih Mudah!
             </h2>
         </div>
@@ -352,16 +419,81 @@
 
     
     <script>
-    function carousel() {
-        return {
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('carousel', (opts = {}) => ({
+            slides: [],           // isi di x-init pada elemen
             active: 0,
-            slides: [
-                'assets/dashboard-produk.png',
-                'assets/dashboard-produk.png',
-                'assets/dashboard-produk.png'
-            ]
-        }
-    }
-</script>
+            isDragging: false,
+            startX: 0,
+            deltaX: 0,
+            threshold: 150,        // jarak minimal (px) untuk ganti slide saat swipe
+            autoplay: opts.autoplay ?? false,
+            interval: null,
+
+            init() {
+                // Autoplay opsional
+                if (this.autoplay) this.startAutoplay();
+            },
+            startAutoplay() {
+                this.stopAutoplay();
+                this.interval = setInterval(() => this.next(), 4000);
+            },
+            stopAutoplay() {
+                if (this.interval) clearInterval(this.interval);
+                this.interval = null;
+            },
+
+            // Navigasi
+            next() {
+                if (!this.slides.length) return;
+                this.active = (this.active + 1) % this.slides.length;
+            },
+            prev() {
+                if (!this.slides.length) return;
+                this.active = (this.active - 1 + this.slides.length) % this.slides.length;
+            },
+            go(i) {
+                if (i < 0 || i >= this.slides.length) return;
+                this.active = i;
+            },
+
+            // Swipe (pointer events -> bekerja untuk mouse & sentuh)
+            onPointerDown(e) {
+                this.isDragging = true;
+                this.startX = e.clientX ?? e.touches?.[0]?.clientX ?? 0;
+                this.deltaX = 0;
+                this.stopAutoplay();
+            },
+            onPointerMove(e) {
+                if (!this.isDragging) return;
+                const current = e.clientX ?? e.touches?.[0]?.clientX ?? 0;
+                this.deltaX = current - this.startX;
+            },
+            onPointerUp() {
+                if (!this.isDragging) return;
+                // Tentukan geser kiri/kanan
+                if (this.deltaX <= -this.threshold) this.next();
+                else if (this.deltaX >= this.threshold) this.prev();
+
+                // Reset drag state
+                this.isDragging = false;
+                this.deltaX = 0;
+                if (this.autoplay) this.startAutoplay();
+            },
+
+            // Style track: geser ikut drag untuk feedback realtime
+            trackStyle() {
+            const w = this.$el.clientWidth || 1;
+            const n = this.slides.length || 1;
+            const step = 100 / n; // geser per slide = 100% / jumlah slide
+            const dragPct = this.isDragging ? (this.deltaX / w) * step : 0;
+            const basePct = -(this.active * step) + dragPct;
+            const totalPct = n * 100;
+            return `transform: translateX(${basePct}%); width: ${totalPct}%;`;
+            }
+
+            }));
+        });
+        </script>
     </body>
 </html>
